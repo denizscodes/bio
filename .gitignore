@@ -1,0 +1,13 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Managed by sub-gitignores but good to have at root too
+node_modules/
+venv/
+.next/
+__pycache__/
