@@ -1,60 +1,38 @@
-# SonicLab AI: Advanced Music Genre Classifier 🎵🤖
+# PlantGuard AI: Akıllı Tarım Teşhis Sistemi (PlantVillage)
 
-**SonicLab** is a premium audio analysis platform that uses an Artificial Neural Network (ANN) to classify music samples into 10 distinct genres with high precision. Featuring a high-end interface with an interactive vinyl experience, this project combines digital signal processing (DSP) with modern deep learning.
+Bu proje, **PlantVillage** veri setini kullanarak bitki hastalıklarını multimodal (görsel + iklimsel) yöntemlerle tespit eden gelişmiş bir yapay zeka platformudur.
 
-## ✨ Key Features
-- **Neural Architecture**: Deep MLP with 55 feature vectors (MFCCs, Chroma, Spectral Centroid, etc.).
-- **Interactive UI**: A premium dark-mode studio interface featuring a rotating vinyl player and dynamic animations (Framer Motion).
-- **Real-time Analysis**: Instant genre detection with confidence scoring.
-- **Robust Feature Engineering**: Advanced signal extraction using `librosa`.
+## 🚀 Özellikler
 
-## 🛠️ Tech Stack
-- **Backend**: Python, FastAPI, PyTorch, Librosa, Scikit-learn.
-- **Frontend**: Next.js 15, React 19, Tailwind CSS, Framer Motion, Lucide Icons.
+1.  **Multimodal Derin Öğrenme**: Sadece yaprak fotoğraflarını değil, o andaki sıcaklık ve nem verilerini de analiz ederek daha tutarlı sonuçlar üretir.
+2.  **Hibrit Algoritmalar**:
+    *   **KNN (K-Nearest Neighbors)**: ResNet18 tarafından çıkarılan özellikler (embeddings) üzerinden görsel benzerlik analizi yapar.
+    *   **ANN (Artificial Neural Network)**: Görüntü özellikleri ile iklim verilerini füzyon katmanında birleştirerek son teşhisi koyar.
+    *   **RNN (Recurrent Neural Network)**: Zaman serisi (5 günlük veri) üzerinden hastalığın ilerleme riskini tahmin eder.
+3.  **Performans Metrikleri**: Confusion Matrix ve ROC Curve ile modelin akademik geçerliliği doğrulanır.
 
-## 🚀 Getting Started
+## 📚 Akademik Kaynaklar (Literatür Taraması)
 
-### 1. Backend Setup
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\\Scripts\\activate
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Run the pre-processing and training (Optional if `music_ann.pth` exists):
-   ```bash
-   python preprocess.py
-   python train.py
-   ```
-5. Start the server:
-   ```bash
-   python -m uvicorn main:app --reload --port 8000
-   ```
+Bu projenin geliştirilmesinde aşağıdaki temel makaleler referans alınmıştır:
 
-### 2. Frontend Setup
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Run the development server:
-   ```bash
-   npm run dev
-   ```
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+1.  **Mohanty, S. P., et al. (2016)**: *"Using Deep Learning for Image-Based Plant Disease Detection"*. (PlantVillage veri setini literatüre kazandıran ve başarım standartlarını belirleyen temel çalışma).
+2.  **Multimodal Deep Learning in Agriculture**: Tarımsal verilerin (görüntü + sensör) birleştirilmesinin başarıyı %15-20 oranında artırdığını kanıtlayan çalışmalar.
+3.  **Performance Analysis of KNN and CNN**: Özellik çıkarımı (feature extraction) sonrası KNN kullanımının, veri setindeki "benzerlik kümelerini" anlamadaki başarısı üzerine analizler.
+4.  **RNN based prediction of crop diseases**: Hava durumu verileri üzerinden zaman serisi analizinin hastalık şiddeti tahminindeki etkinliği.
+5.  **Decision Fusion Levels**: Çok modlu sistemlerde veri seviyesinde (data-level) ve karar seviyesinde (decision-level) füzyon teknikleri.
 
-## 📊 Model Performance
-The system achieves a **76.00% validation accuracy** on the GTZAN dataset, utilizing a refined feature set that captures both spectral characteristics and temporal dynamics.
+## 🛠️ Kurulum
 
-## ⚖️ Credits
-Developed as a Professional Computer Engineering Project - **Rabia and Deniz's Professional Studio**.
+### Backend
+1. Python 3.10+
+2. `/data` klasörüne PlantVillage veri setini yerleştirin.
+3. `pip install -r requirements.txt` (torch, torchvision, sklearn, matplotlib, fastapi, uvicorn)
+4. `python train.py` ile modelleri eğitin.
+5. `python main.py` ile API'yi başlatın.
+
+### Frontend
+1. `npm install`
+2. `npm run dev`
+
+---
+*Akademik Proje - 2026*
