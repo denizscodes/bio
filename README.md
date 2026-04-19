@@ -15,6 +15,20 @@ Bu proje, sürdürülebilir bir gelecek için atık yönetimini dijitalleştirme
 
 ---
 
+## 📊 Kullanılan Veri Setleri (Datasets)
+
+Proje, hem görsel hem de sayısal analizler için iki ana veri kaynağı kullanmaktadır:
+
+1.  **Garbage Classification Dataset (Görüntü)**: 
+    *   **İçerik**: 2500+ yüksek çözünürlüklü atık fotoğrafı.
+    *   **Sınıflar**: Cam, Kağıt, Karton, Plastik, Metal ve Çöp.
+    *   **Kullanım**: CNN (ResNet18) modelinin eğitimi ve KNN benzerlik indeksi için temel teşkil eder.
+2.  **Recycling History Dataset (Zaman Serisi)**:
+    *   **İçerik**: 1 yıllık (365 gün) günlük atık ağırlığı ve zaman verisi.
+    *   **Kullanım**: RNN (LSTM) modelinin gelecek atık trendlerini tahmin etmesi için kullanılan sentetik ve gerçek verilerin birleşimidir.
+
+---
+
 ## 🏗️ Teknik Mimari
 
 Proje, frontend ve backend arasında sıkı bir entegrasyon ile çalışmaktadır:
